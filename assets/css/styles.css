@@ -389,6 +389,11 @@ img {
   border-radius: .5rem;
   justify-self: center;
   align-self: center;
+  filter: grayscale(100%);
+  transition: 0.4s;
+}
+.about_img:hover{
+  filter: none;
 }
 
 .about_description{
@@ -995,5 +1000,9 @@ img {
   }
   .contact_inputs{
     grid-template-columns: repeat(2,1fr);
+  }
+  .skills_container{
+   
+    align-items: center;
   }
 }
