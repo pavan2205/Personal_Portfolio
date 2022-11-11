@@ -7,7 +7,7 @@
 
     /*========== Colors ==========*/
     /* Change favorite color */
-    --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+    --hue-color: 230; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
     /* HSL color mode */
     --first-color: hsl(var(--hue-color), 69%, 61%);
@@ -256,6 +256,9 @@ img {
   color: var(--first-color-alt);
 }
 
+#theme-button{
+  margin-right: 30px;
+}
 
 /* show menu */
 .show-menu{
@@ -274,6 +277,24 @@ img {
   box-shadow: 0 -1px 4px rgba(0,0,0,.15);
 }
 
+/*==========color picker ==============*/
+
+input[type=color]{
+	width: 25px;
+	height: 25px;
+	border: none;
+	border-radius: 40px;
+	background: none;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+  outline-offset: 2px;
+  outline: 2px solid rgb(134, 134, 134);
+	border-radius: 40px;
+}
 
 /*==================== HOME ====================*/
 .home_container{
@@ -837,6 +858,9 @@ img {
   .qualification_data{
     gap: .5rem;
   }
+  .about_img{
+    filter: none;
+  }
 }
 
 /* For medium devices */
@@ -860,6 +884,9 @@ img {
     display: grid;
     grid-template-columns: .6fr;
     justify-content: center;
+  }
+  .about_img{
+    filter: none;
   }
 }
 
