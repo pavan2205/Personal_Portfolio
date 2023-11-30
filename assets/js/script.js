@@ -65,7 +65,7 @@ tabs.forEach((tab) =>
     });
     target.classList.add("qualification_active");
     tabs.forEach((tab) => {
-      tab.classList.remove("qualification-active");
+      tab.classList.remove("qualification_active");
     });
     tabs.classList.add("qualification_active");
   })

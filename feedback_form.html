@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Review Form</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        /* Add some basic styling for better appearance */
+        body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color:#161927;
+    /* display: flex; */
+    /* align-items: center; */
+    /* flex-direction: column;   */
+    color: rgb(202, 202, 202);
+}
+
+h2 {
+    color: #333333;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #435acb;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label ,.emoji-label{
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+input[type="number"],
+input[type="range"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0;
+    box-sizing: border-box;
+}
+
+/* Adjust styles for radio and checkbox alignment */
+input[type="radio"],
+input[type="checkbox"] {
+    vertical-align: middle;
+}
+
+/* Style the satisfaction range input */
+input[type="range"] {
+    width: 80%;
+}
+
+/* Add some spacing for better readability */
+br {
+    line-height: 20px;
+}
+
+    </style>
+</head>
+<body>
+
+<h2>User Review Form</h2>
+
+<form>
+    <label for="rating">Rating:</label>
+    <input type="radio" name="rating" value="1"> 1
+    <input type="radio" name="rating" value="2"> 2
+    <input type="radio" name="rating" value="3"> 3
+    <input type="radio" name="rating" value="4"> 4
+    <input type="radio" name="rating" value="5"> 5
+
+    <br><br>
+
+    <label for="experience">Overall Experience:</label>
+    <input type="number" name="experience" min="1" max="10" value="1">
+
+    <br><br>
+
+    <label for="features">Features:</label>
+    <input type="checkbox" name="feature" value="speed"> Speed
+    <input type="checkbox" name="feature" value="ease"> Ease of Use
+    <input type="checkbox" name="feature" value="reliability"> Reliability
+
+    <br><br>
+
+    <label for="comments">Comments:</label>
+    <textarea name="comments" rows="4" cols="50"></textarea>
+
+    <br><br>
+
+    <label for="platform">College:</label>
+    <select name="platform">
+        <option value="windows">Sahyadri college of engineering and management</option>
+        <option value="mac">St.Joseph college of engineering </option>
+        <option value="linux">Nitte</option>
+    </select>
+
+    <br><br>
+
+    <div class="emoji-label">Satisfaction Level:</div>
+    <input type="range" name="satisfaction" id="satisfaction" value="0" min="0" max="100" oninput="updateEmoji()">
+    <div id="emoji-display">😞</div>
+
+    <br><br>
+
+    <label for="date">Date:</label>
+    <input type="date" name="date">
+
+    <br><br>
+
+    <input type="submit" value="Submit Review">
+</form>
+
+<script>
+  function updateEmoji() {
+      var satisfactionInput = document.getElementById('satisfaction');
+      var emojiDisplay = document.getElementById('emoji-display');
+
+      var value = satisfactionInput.value;
+
+      if (value <= 20) {
+          emojiDisplay.innerText = '😞';
+      } else if (value <= 40) {
+          emojiDisplay.innerText = '😐';
+      } else if (value <= 60) {
+          emojiDisplay.innerText = '😊';
+      } else if (value <= 80) {
+          emojiDisplay.innerText = '😄';
+      } else {
+          emojiDisplay.innerText = '😍';
+      }
+  }
+</script>
+
+</body>
+</html>
